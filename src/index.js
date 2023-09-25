@@ -1,16 +1,18 @@
 function searchCity(city) {
-  let apiKey = "4d87a2ffe1da18c5423d5e37daeb5574";
+  let apiKey = "49335da5da002eeeb604e397f772cc7f";
   let units = "imperial";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
   axios.get(apiUrl).then(displayTemperature);
 }
 function displayTemperature(response) {
   document.querySelector("#city").innerHTML = response.data.name;
-  document.querySelector("#temperature").innerHTML =Math.round(response.data.main.temp);
+  document.querySelector("#temperature").innerHTML = Math.round(
+    response.data.main.temp
+  );
 }
 
 function showPosition(position) {
-  let apiKey = "4d87a2ffe1da18c5423d5e37daeb5574";
+  let apiKey = "49335da5da002eeeb604e397f772cc7f";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=imperial`;
   axios.get(apiUrl).then(displayTemperature);
 }
@@ -37,7 +39,7 @@ let days = [
   "Wednesday",
   "Thursday",
   "Friday",
-  "Saturday"
+  "Saturday",
 ];
 let currentDay = days[now.getDay()];
 
